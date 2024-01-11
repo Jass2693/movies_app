@@ -1,0 +1,137 @@
+@use '../variables' as vars;
+
+section {
+    position: relative; 
+    flex-direction: column;
+  
+    display: flex;
+    overflow: hidden;
+}
+.movieList_container {
+    display: flex;
+    width: 99vw;
+    gap: 10px;
+   
+}
+.movieList_item {
+    position: relative;
+    &:hover {
+        border-radius: 10px;
+        cursor: pointer;      
+    }
+    @media(max-width: vars.$breakpoint-medium){
+        display: flex;
+    }
+}
+.movie_item_img {
+    border-radius: 10px;
+    &:hover {
+        box-shadow:   1px 1px 6px 1px whitesmoke;   
+
+    }
+
+}
+.slider {
+    display: flex;
+    justify-content: space-between;
+    width: 98vw;
+    position: absolute;
+    bottom: 35%;
+    padding-left: 3px;
+    padding-right: 3px;
+    margin-left: 8px;
+    button {
+        width: 60px;
+        height: 60px;
+        border: none;
+        border-radius: 50%;
+        opacity: .7;
+        cursor: pointer;
+        background-color: #000;
+        &:hover{
+            opacity: .85;
+        }
+
+    }
+  
+}
+.item_container {
+    width: 99vw;
+    .item_info_container {
+        position: absolute;
+        top: 10%;
+        text-align: initial;
+        width: 80%;
+        padding-left: 30px;
+        height: 80%;
+        @media (max-width: vars.$breakpoint-large) {
+            top: 2%;
+        }  
+        
+        }
+}
+.genres_list{
+    color: silver;
+    font-family: sans-serif;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    width: fit-content;
+    padding-left: initial;
+    font-size: small;
+    // @media (max-width: vars.$breakpoint-large) {
+       
+    // }
+    li {
+        margin-right: 10px;
+
+
+    }
+      
+  }
+  .movie_item_watch_btn {
+    @media (max-width: vars.$breakpoint-large) {
+    position: absolute;
+    bottom: -5px;
+   }
+   @media (max-width: vars.$breakpoint-medium) {
+    bottom: -80px;
+  }
+}
+  .watch_btn_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+    padding: 5px;
+    
+    @media (max-width:vars.$breakpoint-large) {
+        flex-direction: column;
+        width: 90%;
+        align-items: start;
+        height: 40%;
+    }
+    
+   
+   }
+
+.filterList_container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 64%;
+  gap: 5px;
+  margin: auto;
+  margin-top: 20px;
+  
+ 
+}
+.movie_filter {
+    color: rgb(161, 159, 159);
+    text-decoration: none;
+    .movie_filter:hover {
+       text-decoration: underline;
+  }
+}

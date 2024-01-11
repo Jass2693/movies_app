@@ -1,0 +1,59 @@
+
+@use './layout/nav';
+@use './layout/header';
+@use './layout/main';
+@use './layout/footer';
+@use './spinner';
+
+
+
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: black;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    --main-primary-color: #0044aa;
+    --main-secondary-color: #ff601c;
+   
+
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: azure;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    min-width: 320px;
+    min-height: 100vh;
+     background: linear-gradient(to right, #0c0c0c, var(--main-primary-color));
+    // background: linear-gradient(to right, #28003c, #3c0050);
+    // background-image: url(/public/assets/hbo_background.png);
+    // background-size: auto;
+    
+
+
+
+}
+
+
+.container {
+
+    width: 99vw;
+    
+
+}

@@ -1,0 +1,37 @@
+import React, { useContext } from 'react'
+import { useFetch } from '../../Hooks/useFetch'
+import { MoviesContext } from '../../context/MoviesContext'
+import { Link } from 'react-router-dom'
+
+
+export const MoviesList = () => {
+    const URL = "https://api.themoviedb.org/3/movie/popular?api_key=1ba4e71d287254ba9167f332d45021e0"
+    const imageUrl = "https://image.tmdb.org/t/p/w200"
+    const { movies } = useFetch(URL)
+    const {handleMovieCard} = useContext(MoviesContext)
+  return (
+    <section >
+        <h3 style={{textAlign: "center", marginLeft: "20px"}}>All Movies</h3>
+        <div className='movieList_container'> 
+
+        {
+            movies && movies.map(movie => (
+                <div className='movieList_item' key={movie.id}>
+                   <Link to="/movie-item" onClick={()=> handleMovieCard(movie)}>
+        <img src={`${imageUrl}${movie.poster_path}` } alt=""
+            className='movie_item_img'
+        />
+          
+          </Link>
+               
+                </div>
+            ))
+        }
+        </div>
+
+        <div>
+
+        </div>
+    </section>
+  )
+}
